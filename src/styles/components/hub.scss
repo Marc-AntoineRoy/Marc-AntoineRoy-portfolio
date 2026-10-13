@@ -46,11 +46,32 @@
 
         .hub__links {
             &:nth-child(1) {
-                transform: translateX(25px);
+                transform: translateX(-100px);
+
+                transition-delay: 0.1s;
+
+                transition: all 0.67s $ease-out-expo;
+                opacity: 0;
+
+                &.is-active {
+                    // change ce qu'il faut pour afficher
+                    opacity: 1;
+                    transform: translateX(25px);
+                }
             }
 
             &:nth-child(3) {
-                transform: translateX(-25px);
+                transform: translateX(-100px);
+
+                transition-delay: 0.3s;
+                transition: all 1s $ease-out-expo;
+                opacity: 0;
+
+                &.is-active {
+                    // change ce qu'il faut pour afficher
+                    opacity: 1;
+                    transform: translateX(-25px);
+                }
             }
         }
     }

@@ -68,6 +68,19 @@
         }
     }
 
+    [data-scrolly='flipFromTop'] {
+        // déclarations pour cacher l'élément
+        opacity: 0;
+        transform: rotateX(100deg) translateY(-100%);
+        transition: all 0.67s $ease-out-expo;
+
+        &.is-active {
+            // change ce qu'il faut pour afficher
+            opacity: 1;
+            transform: rotateX(0) translateY(0);
+        }
+    }
+
     [data-scrolly='flipFromLeft'] {
         // déclarations pour cacher l'élément
         opacity: 0;
@@ -93,9 +106,15 @@
             transform: rotateX(0) translateY(0);
         }
     }
+
+    [data-delay='scrollyDelay'] {
+        transition-delay: 0.2s;
+    }
+
     .cards:has([data-scrolly='flipFromLeft']),
     .cards:has([data-scrolly='flipFromBottom']),
+    .cards:has([data-scrolly='flipFromtop']),
     .cards:has([data-scrolly='flipFromRight']) {
-        perspective: 1000px;
+        perspective: -1000px;
     }
 }
