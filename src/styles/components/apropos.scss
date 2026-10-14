@@ -25,6 +25,56 @@
     }
 }
 
+.info__cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    width: 100%;
+
+    .info__card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        overflow: hidden;
+
+        grid-column: 1 / 8;
+
+        gap: 10px;
+        padding: 10px;
+
+        background: var(--color-primary);
+
+        li {
+            z-index: 10;
+        }
+
+        h2 {
+            z-index: 10;
+        }
+
+        .card_pattern {
+            right: 120px;
+            top: -15px;
+
+            transform: rotate(-100deg);
+        }
+
+        svg {
+            fill: var(--color-white);
+        }
+
+        .icon-figma {
+            fill: transparent;
+            stroke: var(--color-white);
+        }
+    }
+
+    @media (width <= $breakpoint-sm) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 /*
    Cartes d'outils et compétences
    ========================================================================== */
@@ -135,52 +185,6 @@
 
         .card_pattern {
             opacity: 50%;
-        }
-    }
-}
-
-.info__cards {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 24px;
-    width: 100%;
-
-    .info__card {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        overflow: hidden;
-
-        grid-column: 1 / 8;
-
-        gap: 10px;
-        padding: 10px;
-
-        background: var(--color-primary);
-
-        li {
-            z-index: 10;
-        }
-
-        h2 {
-            z-index: 10;
-        }
-
-        .card_pattern {
-            right: 120px;
-            top: -15px;
-
-            transform: rotate(-100deg);
-        }
-
-        svg {
-            fill: var(--color-white);
-        }
-
-        .icon-figma {
-            fill: transparent;
-            stroke: var(--color-white);
         }
     }
 }
