@@ -3,11 +3,15 @@
    ========================================================================== */
 
 .header {
+    --header-height: 72px;
+
     background: var(--color-primary);
 
     position: sticky;
     top: 0;
     z-index: 99;
+
+    height: --header-height;
 
     .wrapper {
         display: flex;
@@ -28,6 +32,29 @@
     align-items: center;
 
     gap: 50px;
+
+    transform: translateY(-100%) translateX(100%);
+    border-radius: 100px;
+    transition: transform 0.67s $ease-out-expo;
+
+    .nav-is-active & {
+        transform: translateY(0) translateX(0);
+        border-radius: 0;
+    }
+
+    @media (width <= $breakpoint-sm) {
+        position: absolute;
+
+        background: var(--color-primary);
+
+        flex-direction: column;
+
+        width: 100%;
+        left: 0;
+        top: var(--header-height);
+        padding: 25px;
+        z-index: -1;
+    }
 }
 
 .nav__plateforme {
@@ -47,10 +74,29 @@
                 }
             }
         }
-    }
 
-    @media (width < $breakpoint-sm) {
-        display: none;
+        li {
+            transform: translateY(-50%);
+            transition: all 0.67s $ease-out-back;
+
+            &:nth-child(1) {
+                .nav-is-active & {
+                    transform: translateY(0);
+                }
+            }
+            &:nth-child(2) {
+                .nav-is-active & {
+                    transform: translateY(0);
+                    transition-delay: 0.1s;
+                }
+            }
+            &:nth-child(3) {
+                .nav-is-active & {
+                    transform: translateY(0);
+                    transition-delay: 0.2s;
+                }
+            }
+        }
     }
 }
 .nav__principal {
@@ -63,10 +109,32 @@
         a {
             color: var(--color-white);
         }
-    }
+        @media (width <= $breakpoint-sm) {
+            flex-direction: column;
+        }
 
-    @media (width < $breakpoint-sm) {
-        display: none;
+        li {
+            transform: translateX(-50%);
+            transition: all 0.67s $ease-out-back;
+
+            &:nth-child(1) {
+                .nav-is-active & {
+                    transform: translateX(0);
+                }
+            }
+            &:nth-child(2) {
+                .nav-is-active & {
+                    transform: translateX(0);
+                    transition-delay: 0.1s;
+                }
+            }
+            &:nth-child(3) {
+                .nav-is-active & {
+                    transform: translateX(0);
+                    transition-delay: 0.2s;
+                }
+            }
+        }
     }
 }
 
@@ -91,10 +159,23 @@
 
         &:nth-child(2) {
             width: 60px;
+
+            transition: all 0.67s $ease-out-expo;
+
+            .nav-is-active & {
+                width: 80px;
+            }
         }
 
         &:nth-child(3) {
             width: 40px;
+
+            transition: all 0.67s $ease-out-expo;
+            transition-delay: 0.1s;
+
+            .nav-is-active & {
+                width: 80px;
+            }
         }
     }
     &:hover {
