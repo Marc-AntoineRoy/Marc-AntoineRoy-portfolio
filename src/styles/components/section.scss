@@ -6,6 +6,14 @@
 .section {
     .wrapper {
         padding: 80px 120px;
+
+        @media (width <= $breakpoint-md) {
+            padding: 10px 75px;
+        }
+
+        @media (width <= $breakpoint-sm) {
+            padding: 10px 35px;
+        }
     }
 }
 .background {

@@ -64,7 +64,7 @@
         }
     }
 
-    .nav__plateforme {
+    .nav__plateforme__footer {
         z-index: 10;
 
         ul {
@@ -83,10 +83,6 @@
                     }
                 }
             }
-        }
-
-        @media (width < $breakpoint-sm) {
-            display: none;
         }
     }
 

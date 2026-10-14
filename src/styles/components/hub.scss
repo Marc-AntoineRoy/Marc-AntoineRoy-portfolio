@@ -9,6 +9,11 @@
         gap: 24px;
 
         position: relative;
+
+        @media (width <= $breakpoint-sm) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }
 
@@ -35,6 +40,7 @@
     align-items: flex-start;
 
     gap: 28px;
+    padding-top: 80px;
 
     .nav__hub {
         display: flex;
@@ -74,5 +80,9 @@
                 }
             }
         }
+    }
+
+    @media (width <= $breakpoint-sm) {
+        align-items: center;
     }
 }

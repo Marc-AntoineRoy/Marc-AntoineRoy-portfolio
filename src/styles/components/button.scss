@@ -51,4 +51,8 @@
             background: var(--color-secondary);
         }
     }
+
+    @media (width <= $breakpoint-sm) {
+        width: 300px;
+    }
 }

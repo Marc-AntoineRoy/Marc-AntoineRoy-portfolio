@@ -5,9 +5,13 @@
 .wrapper {
     max-width: $breakpoint-lg;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 120px;
+
+    @media (width <= $breakpoint-md) {
+        padding: 10px 75px;
+    }
 
     @media (width <= $breakpoint-sm) {
-        padding: 0 20px;
+        padding: 10px 35px;
     }
 }
