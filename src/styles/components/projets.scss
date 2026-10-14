@@ -43,6 +43,7 @@
                 }
 
                 .logiciels {
+                    z-index: 10;
                     svg {
                         fill: var(--color-white);
                     }
@@ -102,6 +103,29 @@
                     left: 0;
                 }
             }
+
+            @media (width <= $breakpoint-sm) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                gap: 0;
+
+                .card__media {
+                    width: 100%;
+
+                    transform: translateY(-100px);
+                }
+
+                .card__content {
+                    max-height: fit-content;
+                    width: 90%;
+                }
+            }
+        }
+        @media (width <= $breakpoint-sm) {
+            gap: 0;
         }
     }
 }

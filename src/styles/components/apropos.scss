@@ -22,6 +22,10 @@
             right: 25px;
             transform: rotate(100deg);
         }
+
+        @media (width <= $breakpoint-sm) {
+            grid-column: 1 / span 12;
+        }
     }
 }
 
