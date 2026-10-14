@@ -72,6 +72,9 @@
 
     @media (width <= $breakpoint-sm) {
         grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+
+        max-width: 100%;
     }
 }
 
@@ -105,13 +108,24 @@
 
             opacity: 100%;
         }
+
+        @media (width <= $breakpoint-sm) {
+            grid-column: -1 / -4;
+            grid-row: 1;
+
+            width: 320px;
+
+            &.is-active {
+                transform: translateY(130px) translateX(-90px);
+            }
+        }
     }
 
     .info__card:nth-child(1) {
         grid-column: 1 / 8;
 
         grid-row: 1;
-        width: 600px;
+        max-width: 600px;
         left: 0;
 
         background: var(--color-secondary);
@@ -123,13 +137,22 @@
         &.is-active {
             // change ce qu'il faut pour afficher
             opacity: 1;
-            transform: translateX(0px);
-            transform: translateY(-30px);
+            transform: translateY(-30px) translateX(0px);
         }
 
         .card_pattern {
             opacity: 50%;
         }
+
+        @media (width <= $breakpoint-sm) {
+            grid-column: 1 / span 3;
+
+            width: 320px;
+        }
+    }
+
+    @media (width <= $breakpoint-sm) {
+        margin-bottom: 75px;
     }
 }
 
@@ -159,6 +182,17 @@
 
             opacity: 100%;
         }
+
+        @media (width <= $breakpoint-sm) {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+
+            width: 320px;
+
+            &.is-active {
+                transform: translateY(110px);
+            }
+        }
     }
 
     .info__card:nth-child(2) {
@@ -186,6 +220,21 @@
         .card_pattern {
             opacity: 50%;
         }
+
+        @media (width <= $breakpoint-sm) {
+            grid-column: -1 / -4;
+            grid-row: 1;
+
+            width: 320px;
+
+            &.is-active {
+                transform: translateY(-30px) translateX(-90px);
+            }
+        }
+    }
+
+    @media (width <= $breakpoint-sm) {
+        margin-bottom: 75px;
     }
 }
 
@@ -218,6 +267,12 @@
         .interest__media {
             height: 100%;
             width: 100%;
+
+            overflow: hidden;
+
+            justify-content: center;
+            align-items: center;
+
             img {
                 display: block;
                 height: 100%;
@@ -231,6 +286,11 @@
             bottom: -10px;
             left: -10px;
         }
+    }
+
+    @media (width <= $breakpoint-sm) {
+        grid-template-columns: unset;
+        grid-template-rows: repeat(3, 1fr);
     }
 }
 /*
@@ -252,6 +312,10 @@
 
         .text_card {
             grid-column: -1 / -8;
+
+            @media (width <= $breakpoint-sm) {
+                grid-column: 1 / span 12;
+            }
         }
     }
 }
