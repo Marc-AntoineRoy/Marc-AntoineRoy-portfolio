@@ -62,6 +62,14 @@
                 }
             }
         }
+
+        @media (width <= $breakpoint-sm) {
+            flex-direction: column;
+
+            .footer__info__card {
+                width: 100%;
+            }
+        }
     }
 
     .nav__plateforme__footer {
