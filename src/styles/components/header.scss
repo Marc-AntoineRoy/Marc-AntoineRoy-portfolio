@@ -13,6 +13,8 @@
 
     height: --header-height;
 
+    overflow: hidden;
+
     .wrapper {
         display: flex;
         justify-content: space-between;
@@ -23,6 +25,10 @@
         @media (width <= $breakpoint-sm) {
             padding: 10px 16px;
         }
+    }
+
+    @media (width <= $breakpoint-sm) {
+        overflow: visible;
     }
 }
 
