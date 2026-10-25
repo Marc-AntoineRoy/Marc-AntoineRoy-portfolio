@@ -1,5 +1,7 @@
 import Header from './components/Header.js';
 import Scrolly from './components/Scrolly.js';
+import Scroller from './components/Scroller.js';
+import TextAnim from './components/TextAnim.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -7,6 +9,8 @@ export default class ComponentFactory {
     this.componentList = {
       Header,
       Scrolly,
+      TextAnim,
+      Scroller,
     };
     this.init();
   }
