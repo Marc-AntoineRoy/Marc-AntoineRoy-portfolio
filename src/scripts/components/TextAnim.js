@@ -57,6 +57,12 @@ export default class TextAnim {
         autoAlpha: 0,
       });
     }
+    if ('left' in this.element.dataset) {
+      gsap.set(this.split.chars, {
+        xPercent: '100',
+        autoAlpha: 0,
+      });
+    }
   }
 
   // façon plus rtapide et simple de faire le anim in et out, basically standardiser les fonctions
@@ -64,6 +70,7 @@ export default class TextAnim {
     const alpha = isAnimIn ? 1 : 0;
     const y = isAnimIn ? 0 : '-100';
     const x = isAnimIn ? 0 : '100';
+    const xRight = isAnimIn ? 0 : '-100';
 
     if ('top' in this.element.dataset) {
       gsap.to(this.split.chars, {
@@ -80,6 +87,17 @@ export default class TextAnim {
       gsap.to(this.split.chars, {
         duration: 1,
         xPercent: x,
+        autoAlpha: alpha,
+        delay: 0.25,
+        stagger: 0.01,
+        ease: 'expo.out',
+      });
+    }
+
+    if ('right' in this.element.dataset) {
+      gsap.to(this.split.chars, {
+        duration: 1,
+        xPercent: xRight,
         autoAlpha: alpha,
         delay: 0.25,
         stagger: 0.01,
