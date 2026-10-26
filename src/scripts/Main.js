@@ -7,8 +7,6 @@ class Main {
   }
 
   init() {
-    console.log('test');
-
     document.documentElement.classList.add('has-js');
 
     Icons.load();

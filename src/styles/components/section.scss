@@ -6,6 +6,8 @@
 .section {
     overflow: hidden;
 
+    z-index: 999;
+
     .wrapper {
         padding: 80px 120px;
 
@@ -18,10 +20,14 @@
         }
     }
 }
+.ScrollSmoother-wrapper {
+    z-index: -999;
+}
+
 .background {
     // modifier avec gsap pour faire un delayed scroll
     position: absolute;
-    z-index: -10;
+    z-index: -999;
 }
 .line {
     height: 2px;
