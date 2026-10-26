@@ -16,8 +16,13 @@ export default class Header {
   // activation du menu mobile
   initNavMobile() {
     const toggle = this.element.querySelector('.js-toggle');
+    const toggleLabel = this.element.querySelectorAll('.js-toggle-label');
     //console.log(toggle);
     toggle.addEventListener('click', this.onToggleNav.bind(this));
+    for (let i = 0; i < toggleLabel.length; i++) {
+      const elements = toggleLabel[i];
+      elements.addEventListener('click', this.onToggleNav.bind(this));
+    }
   }
 
   onToggleNav() {
