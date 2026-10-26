@@ -2,6 +2,7 @@ import Header from './components/Header.js';
 import Scrolly from './components/Scrolly.js';
 import TextAnim from './components/TextAnim.js';
 import Scroller from './components/Scroller.js';
+import Panels from './components/Panels.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -11,6 +12,7 @@ export default class ComponentFactory {
       Scrolly,
       TextAnim,
       Scroller,
+      Panels,
     };
     this.init();
   }

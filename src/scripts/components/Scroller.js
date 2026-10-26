@@ -12,7 +12,7 @@ export default class Scroller {
 
   init() {
     const scroller = ScrollSmoother.create({
-      smooth: 7.5,
+      stagger: 20,
       smoothTouch: 7.5,
     });
   }

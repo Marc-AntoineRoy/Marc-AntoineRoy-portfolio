@@ -3,15 +3,16 @@
    ========================================================================== */
 
 .header {
-    --header-height: 72px;
+    --header-height: 84px;
 
     background: var(--color-primary);
 
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 999;
 
-    height: --header-height;
+    height: var(--header-height);
+    width: 100%;
 
     overflow: hidden;
 
